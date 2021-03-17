@@ -24,19 +24,26 @@ class OnboardingScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
 
                       children: [
-                        Image.asset(_controller.onBoardingpages[index].imageAsset,),
+                        Image.asset(_controller.onBoardingpages[index].imageAsset,
+                        height: MediaQuery.of(context).size.height * 0.4,),
+                        SizedBox(height: 30
+                          ,),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                            child: Text(_controller.onBoardingpages[index].title, style:
+                              TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold
+                              ),),
+                          ),
+                        ),
                         SizedBox(height: 20
                           ,),
-                        Text(_controller.onBoardingpages[index].title, style:
-                          TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold
-                          ),),
-                        SizedBox(height: 10
-                          ,),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                          padding: const EdgeInsets.symmetric(horizontal: 25.0),
                           child: Text(_controller.onBoardingpages[index].description, style: TextStyle(
                             color: Colors.black45,
                             fontSize: 14,

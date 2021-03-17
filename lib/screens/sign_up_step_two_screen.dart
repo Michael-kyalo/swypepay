@@ -7,7 +7,9 @@ class SignUpStepTwo extends StatefulWidget {
 
 class _SignUpStepTwoState extends State<SignUpStepTwo> {
 
-  String valueChosen;
+  String valueChosen="1";
+  String CountryChosen = "Kenya";
+  String typeChosen = "type 1";
   List ownerList= [
     '1','2','3','4','5'
   ];
@@ -182,10 +184,11 @@ class _SignUpStepTwoState extends State<SignUpStepTwo> {
                             ]
                         )),
                         DropdownButton(
+                          value: CountryChosen,
                           hint: Text("Kenya"),
                              onChanged: (newValue){
                                setState(() {
-                                 valueChosen = newValue;
+                                 CountryChosen = newValue;
                                });
                              },
                             items: countrylist.map((valueItem){
@@ -224,10 +227,10 @@ class _SignUpStepTwoState extends State<SignUpStepTwo> {
                   hint: Text('Business Type'),
                  isExpanded: true,
                   icon: Icon(Icons.arrow_drop_down),
-                  value: valueChosen,
+                  value: typeChosen,
                   onChanged: (newValue){
                     setState(() {
-                      valueChosen = newValue;
+                      typeChosen = newValue;
                     });
                   },
                   items: typlist.map((valueItem){
@@ -285,7 +288,6 @@ class _SignUpStepTwoState extends State<SignUpStepTwo> {
                 child: RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(
-
                         text: "By continuing, you agree to SwypePay's,\n",
                         style: TextStyle(
                           color: Colors.black45,
@@ -316,7 +318,6 @@ class _SignUpStepTwoState extends State<SignUpStepTwo> {
                         ]
                     )),
               ),
-
 
             ],
           ),
