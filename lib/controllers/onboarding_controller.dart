@@ -2,15 +2,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:swypepay/models/onboarding_info.dart';
 import 'package:get/state_manager.dart';
 import 'package:get/utils.dart';
+import 'package:swypepay/services/navigation_service.dart';
 
 class OnBoardingController extends GetxController{
   var seletedPageIndex = 0.obs;
   var pageController = PageController();
   bool get isLastScreen => seletedPageIndex.value == onBoardingpages.length - 1;
 
+
   nextPage(){
     if(isLastScreen){
       //go to auth
+    NavigationService.instance.navigateTo("login");
+
+
     }
     else
     pageController.nextPage(duration: 300.milliseconds, curve: Curves.ease);

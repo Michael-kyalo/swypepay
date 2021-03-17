@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:swypepay/controllers/onboarding_controller.dart';
 
+import 'login_screen.dart';
+
 class OnboardingScreen extends StatelessWidget {
   final _controller = OnBoardingController();
 
@@ -22,7 +24,7 @@ class OnboardingScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
 
                       children: [
-                        Image.asset(_controller.onBoardingpages[index].imageAsset),
+                        Image.asset(_controller.onBoardingpages[index].imageAsset,),
                         SizedBox(height: 20
                           ,),
                         Text(_controller.onBoardingpages[index].title, style:
@@ -47,12 +49,12 @@ class OnboardingScreen extends StatelessWidget {
                 }),
 
             Positioned(
-              bottom: 30,
-              left: 20,
+              bottom: 40,
+              left: 30,
               child: Row(
                 children: List.generate(_controller.onBoardingpages.length, (index) => Obx(() {
                     return Container(
-                      margin: const EdgeInsets.all(4.0),
+                      margin: const EdgeInsets.all(2.0),
                       width: 6,
                       height: 6,
                       decoration: BoxDecoration(
@@ -69,7 +71,7 @@ class OnboardingScreen extends StatelessWidget {
               bottom: 20,
 
               child: FloatingActionButton(
-                onPressed: _controller.nextPage,
+                onPressed:  _controller.nextPage,
                 elevation: 0,
                 child: Icon(Icons.navigate_next, color: Colors.white,),
               ),
