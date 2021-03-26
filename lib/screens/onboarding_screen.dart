@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:swypepay/controllers/onboarding_controller.dart';
 
-import 'login_screen.dart';
+import 'auth/login_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   final _controller = OnBoardingController();
@@ -33,22 +33,14 @@ class OnboardingScreen extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 20.0),
                             child: Text(_controller.onBoardingpages[index].title, style:
-                              TextStyle(
-                                color: Colors.black,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold
-                              ),),
+                            Theme.of(context).textTheme.headline1),
                           ),
                         ),
                         SizedBox(height: 20
                           ,),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                          child: Text(_controller.onBoardingpages[index].description, style: TextStyle(
-                            color: Colors.black45,
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold
-                          ),),
+                          child: Text(_controller.onBoardingpages[index].description, style:  Theme.of(context).textTheme.bodyText1,),
                         ),
                       ],
                     ),
@@ -80,7 +72,7 @@ class OnboardingScreen extends StatelessWidget {
               child: FloatingActionButton(
                 onPressed:  _controller.nextPage,
                 elevation: 0,
-                child: Icon(Icons.navigate_next, color: Colors.white,),
+                child: Icon(Icons.arrow_right_alt, color: Colors.white,),
               ),
 
             )
